@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,11 @@ flutter:
    - assets/images/nasa.png
    - assets/images/about.jpg
    - assets/images/about1.png
+   - assets/images/marsweather.png
+   - assets/images/APOP.jpg
+   - assets/images/Infinity.jpg
+   - assets/images/MarsRover.jpg
+   - assets/images/last.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

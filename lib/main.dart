@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'services.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        //'/':(context) => MyHomePage(title: 'title'),
+        '/second':(context) =>service()
+
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -79,10 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-    
+
       body: Stack(
         children:[ Container(
-          
+
           height: MediaQuery.of(context).size.height,
           child: Image.asset('assets/images/background.jpg',fit: BoxFit.fitHeight,) ,
         ),
@@ -90,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          
+
           const Padding(
              padding:  EdgeInsets.fromLTRB(20,50,0,0),
              child:  Column(
@@ -99,11 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Infinity ',style: TextStyle(color: Color.fromARGB(255, 224, 69, 8),fontSize: 40,fontFamily: 'Orbitron'),),
                  Text('       Suspense ',style: TextStyle(color: Colors.white,fontSize: 40,fontFamily: 'Orbitron'),),
                 Text('or One Way  ',style: TextStyle(color: Colors.white,fontSize: 40,fontFamily: 'Orbitron'),),
-                 Text('trip ',style: TextStyle(color: Colors.white,fontSize: 40,fontFamily: 'Orbitron'),),
-           
+                 Text('trip ',style: TextStyle(color: Color.fromARGB(255, 254, 255, 254),fontSize: 40,fontFamily: 'Orbitron'),),
+
               ],),
            ),
-            
+
 
 
             Padding(
@@ -111,10 +122,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                Icon(Icons.menu,color: Colors.white,size: 30,),
+                IconButton(
+                 icon: const Icon(Icons.menu,color: Colors.white,size: 30,) ,onPressed: () {
+                  Navigator.pushNamed(context, '/second');
+                  },),
                  Container(height:70 ,child:Image.asset('assets/images/nasa.png',)),
                  Container(height:70 ,child:Image.asset('assets/images/about1.png',)),
-                 
+
               ],),
             )
           ],
