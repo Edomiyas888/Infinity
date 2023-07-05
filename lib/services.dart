@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_pictures/Astronomy.dart';
+import 'package:nasa_pictures/marsRoverPics.dart';
 export 'package:flutter/services.dart';
 
  class service extends StatefulWidget {
@@ -57,29 +58,35 @@ class __serviceState extends State<service> {
                               ),
                               
                             ),
-                            Container(
-                              height: 120,
-                              width: 150,
-                              decoration: BoxDecoration(border: Border.all(color: Colors.white),borderRadius: BorderRadius.circular(20)),
-                              child: Stack(
-                                children: [
-                                  ClipRRect(
-                                    
-                                    borderRadius: BorderRadius.circular(20),
-                                    
-                                    child: Image.asset(
+                            GestureDetector(
+                              child: Container(
+                                height: 120,
+                                width: 150,
+                                decoration: BoxDecoration(border: Border.all(color: Colors.white),borderRadius: BorderRadius.circular(20)),
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
                                       
-                                      'assets/images/MarsRover.jpg',fit: BoxFit.cover,
-                                      height: 200,
-                                      width: 150,
-                                      )),
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Text('Mars Rover Photos',style: TextStyle(color: Colors.white,fontSize: 9,fontFamily: 'Orbitron'),),
-                                            ),
-                                ],
+                                      borderRadius: BorderRadius.circular(20),
+                                      
+                                      child: Image.asset(
+                                        
+                                        'assets/images/MarsRover.jpg',fit: BoxFit.cover,
+                                        height: 200,
+                                        width: 150,
+                                        )),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Text('Mars Rover Photos',style: TextStyle(color: Colors.white,fontSize: 9,fontFamily: 'Orbitron'),),
+                                              ),
+                                  ],
+                                ),
+                                
                               ),
-                              
+                              onTap: () {
+                                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MarsRover()));
+
+                              },
                             ),
                             GestureDetector(
                               child: Container(
